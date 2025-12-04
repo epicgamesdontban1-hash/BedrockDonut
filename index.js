@@ -23,7 +23,8 @@ const CONFIG = {
         username: '', // Your Xbox Gamertag
         auth: 'microsoft',
         offline: false,
-        profilesFolder: './profiles'
+        profilesFolder: './profiles',
+        version: '1.21.100' // Use closest supported version to server's 1.21.124
     },
     webServer: {
         port: process.env.PORT || 5000,
@@ -726,7 +727,8 @@ class MinecraftBedrockDiscordBot {
                 username: CONFIG.minecraft.username,
                 offline: CONFIG.minecraft.offline,
                 profilesFolder: CONFIG.minecraft.profilesFolder,
-                auth: CONFIG.minecraft.auth
+                auth: CONFIG.minecraft.auth,
+                version: CONFIG.minecraft.version
             });
 
             this.setupMinecraftEvents();
