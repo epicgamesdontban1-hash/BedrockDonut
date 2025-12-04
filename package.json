@@ -1,1 +1,31 @@
-
+{
+  "name": "minecraft-bedrock-discord-bot",
+  "version": "1.0.0",
+  "description": "Minecraft Bedrock AFK bot with Discord integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "minecraft",
+    "bedrock",
+    "discord",
+    "bot",
+    "afk"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "bedrock-protocol": "^3.16.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
