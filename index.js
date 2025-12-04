@@ -18,9 +18,9 @@ const CONFIG = {
         channelId: process.env.DISCORD_CHANNEL_ID
     },
     minecraft: {
-        host: 'play.atommc.co.za',
-        port: 25570,
-        username: 'Hujo2011', // Your Xbox Gamertag
+        host: 'donutsmp.net',
+        port: 19132,
+        username: '', // Your Xbox Gamertag
         auth: 'microsoft',
         offline: false,
         profilesFolder: './profiles'
