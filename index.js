@@ -1,4 +1,12 @@
-// ============================================================================
+setupConsoleCapture() {
+        // Console capture for Bedrock auth detection
+        if (!this.originalConsoleLog) {
+            this.originalConsoleLog = console.log;
+            console.log = (...args) => {
+                const message = args.join(' ');
+
+                // Detect Bedrock auth messages
+                if (message.includes('microsoft.com/link') || message.includes('use the code// ============================================================================
 // DOGGO - Minecraft Bedrock Discord Bot
 // ============================================================================
 
@@ -20,7 +28,7 @@ const CONFIG = {
     minecraft: {
         host: 'donutsmp.net',
         port: 19132,
-        username: '', // Your Xbox Gamertag
+        username: '', // Auto-detect from Microsoft account
         auth: 'microsoft',
         offline: false,
         profilesFolder: './profiles',
@@ -720,6 +728,9 @@ class MinecraftBedrockDiscordBot {
             await this.updateEmbed();
 
             console.log('Creating Bedrock client...');
+            
+            // Setup console capture BEFORE creating client
+            this.setupConsoleCapture();
             
             this.minecraftBot = createClient({
                 host: CONFIG.minecraft.host,
